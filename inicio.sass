@@ -1,0 +1,705 @@
+.menu
+    width: 90%
+    display: inline-grid
+    grid-template-columns: 25% 25% 25% 25%
+    grid-template-rows: auto
+    margin: 1% 2% 5% 2%
+    grid-column-gap: 2%
+    font-size: 30px
+    div
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        padding: 3%
+        text-align: center
+        border: 2px solid #D9765F
+        border-radius: 5px
+    div:hover
+        border: 2px solid #D9765F
+        background-color: #D9765F
+        cursor: pointer
+        color: white
+
+.busc, .bPro
+    background-image: url('lupa.png')
+    background-repeat: no-repeat
+    background-size: 32px 32px
+    background-position: 99%
+
+.active
+    background-color: #D9765F
+    color: white
+
+.nada
+    background-color: red!important
+
+#cerrarC
+    border-radius: 5px
+    cursor: pointer
+    float: right
+    margin: 1%
+    padding: 1px
+    border: 2px solid #D9765F
+#cerrarC:hover
+    border: 2px solid #D9765F
+    background-color: #D9765F
+    cursor: pointer
+    color: white
+       
+.factura
+    width: 90%
+    margin: 5%
+    height: auto
+    display: inline-grid
+    grid-template-columns: auto auto auto
+    grid-template-rows: repeat(auto,8)
+    grid-row-gap: 1%
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    padding: 5% 5% 5% 5%
+    font-size: 17px
+    margin-bottom: 5%
+    .logo
+        background-image: url("log.png")
+        background-size: 150%
+        height: 80px
+        background-position: center
+        width: 100%
+        grid-column: 1
+        grid-row: 1      
+    .numero
+        float: right
+        grid-column: 3
+        grid-row: 1
+    .fechaE
+        grid-column: 1/span 1
+        grid-row: 2
+        input
+            width: 10%
+            display: inline
+    .formularioE
+        grid-column: 1/span 2
+        grid-row: 3
+    .fechaR 
+        grid-row: 4          
+        grid-column: 1
+        input
+            width: 10%
+            display: inline
+    .importe       
+        grid-column: 1 
+        float: right
+        display: inline
+        grid-row: 5
+        input
+            width: 80%   
+    .firma
+        grid-column: 3
+        grid-row: 5        
+        display: inline
+        margin-left: 4%
+    .aclaraciones
+        width: 80%
+        grid-row: 5
+        grid-column: 2
+        display: inline
+        text-align: center
+    .formularioR
+        grid-column: 1/span 2
+        grid-row: 6
+    .datos
+        display: none
+        font-size: 15px
+        grid-row: 7
+        grid-column: 1/span 3
+    .separar
+        width: 5%
+        grid-row: 8
+        grid-column: 2
+#enviar
+    grid-column: 3 
+    background-color: #A62121
+    grid-row: 8
+    margin: 3%
+    padding: 7%
+    font-size: 20px
+    color: white
+#enviar:hover
+    color: black
+#i
+    background-color: #4E8BBF
+    grid-column: 1
+    grid-row: 8
+    margin: 3%
+    padding: 7%
+    font-size: 20px
+    color: white
+#i:hover
+    color: black
+
+#modificar
+    grid-column: 2
+    grid-row: 7
+    margin: 3%
+    
+.mostrar
+    display: inline-block!important
+.esconder
+    display: none!important
+
+.submenu
+    width: 100%
+    display: inline-grid
+    grid-template-columns: 50% 30%
+    grid-template-rows: 1
+    justify-content: center
+    .nuevo        
+        grid-column: 1 
+        grid-row: 1
+        border: 2px solid #548C72
+        padding: 2%
+        border-radius: 10px
+        font-size: 25px
+        text-align: center
+        margin-right: 60%
+    .nuevo:hover
+        color: white
+        cursor: pointer
+        background-color: #548C72
+        padding: 2%
+        border-radius: 10px
+        font-size: 25px
+    .verg
+        text-align: center
+        grid-column: 2
+        grid-row: 1
+        border: 2px solid #548C72
+        padding: 2%
+        border-radius: 10px
+        font-size: 25px
+        width: 70%
+    .verg:hover
+        color: white
+        cursor: pointer
+        background-color: #548C72
+        padding: 2%
+        border-radius: 10px
+        font-size: 25px
+    .atras
+        text-align: center
+        grid-column: 1
+        grid-row: 1
+        border: 2px solid #548C72
+        padding: 2%
+        border-radius: 10px
+        font-size: 25px
+        width: 20%
+    .atras:hover
+        color: white
+        cursor: pointer
+        background-color: #548C72
+        padding: 2%
+        border-radius: 10px
+        font-size: 25px
+        
+
+
+#verg
+    margin: 2%
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: auto
+    justify-content: center    
+    
+#stock 
+    width: 90%
+    margin: 2% auto 0% auto
+    .boxDolar
+        display: grid
+        grid-template-columns: auto 5% auto auto
+        grid-template-rows: auto
+        width: 60%
+        grid-column-gap: 5%
+        margin-bottom: 2%
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        padding: 1%
+        border-radius: 5px
+        label
+            grid-column: 1
+            font-size: 25px
+        .dolar
+            grid-column: 2
+        .predolar
+            grid-column: 3
+        .cambiarD
+            grid-column: 4!important
+            text-align: center!important
+            font-size: 20px!important
+        .cambiarD:hover
+            cursor: pointer
+    #buscar
+        height: 60px
+        width: 35%
+        float: right
+        margin-bottom: 2%
+    .table       
+        align-content: center            
+        .hov:hover
+            color: #D9923B
+            cursor: pointer
+    .cont
+        width: 80%
+        align-content: center
+        position: sticky!important
+        bottom: 0
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        background-color: #182D40
+        opacity: .9
+        .cargar 
+            display: grid
+            grid-template-columns: auto auto auto
+            grid-template-rows: repeat(3,auto)                  
+            color: white
+            padding: 1%
+            
+            label
+                font-size: 25px
+                margin-top: 5px
+                text-align: center
+                grid-column: 1/span 1
+               
+            input
+                margin-top: 5px                
+                grid-column: 2/ span 2   
+    .out
+        background-color: #BF1304
+        color: #F2EADF
+        font-size: 20px
+        grid-row: 1
+        grid-column: 3
+        margin-bottom: 4%
+    .out:hover
+        color: black
+        border-color: 3px solid #FECE6D            
+    .nv
+        margin-bottom: 4%
+        grid-column: 1
+        grid-row: 1
+        color: #F2EADF
+        font-size: 20px
+        background-color: #1A7552
+    .nv:hover
+        color: black
+    #cargar
+        font-size: 20px
+        margin-top: 2%!important
+        width: 100%!important
+        grid-row: 13
+        background-color: #3F8C85
+        color: #F2EADF
+    #cargar:hover
+        color: black
+    .in
+        margin: 0 auto 2%
+        width: 60%
+        border: 2px solid #548C72
+        padding: 1%
+        border-radius: 10px
+        font-size: 25px
+        cursor: pointer
+    .in:hover
+        background-color: #548C72        
+        color: white
+        cursor: pointer
+
+#provedor
+    display: grid
+    grid-template-columns: 45% 45%
+    grid-template-rows: auto auto  auto
+    justify-content: center
+    grid-row-gap: 5%
+    grid-column-gap: 5%
+    .table
+        grid-column: 1/span 2
+        grid-row: 2
+        width: 100%
+        select
+            grid-row: 1
+        input
+            grid-row: 1
+.totalProve
+    border: 2px solid black
+    font-size: 30px
+    width: 40%
+    padding: 1%
+    grid-row: 3
+    grid-column: 2
+        
+
+
+#venta
+    .mostrarCaja
+        position: relative 
+        display: inline
+        border: 2px solid #548C72
+        padding: 2%
+        border-radius: 10px
+        font-size: 25px
+    .mostrarCaja:hover
+        background-color: #548C72        
+        color: white
+        cursor: pointer
+    #Caja
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        width: 40%
+        margin-left: 30%
+        position: absolute
+        padding: 3%
+        background-color: white
+        color: black
+        height: auto
+        border: 2px solid black
+        .CerrarCaja
+            float: right
+            color: white
+            text-align: center
+            background-color: red
+            cursor: pointer
+            width: 45px
+            border-radius: 3px
+            font-size: 17px
+            margin-bottom: 10%
+          
+        .table
+            display: grid
+            grid-template-columns: auto auto auto
+            grid-template-rows: auto auto 
+            margin: 5%
+            grid-column-gap: 2%
+            grid-row-gap: 2%
+            label
+                grid-column: 1
+            input
+                grid-column: 2
+            .abrir
+                grid-column: 3
+                border: 2px solid #548C72
+                padding: 4%
+                border-radius: 10px
+                text-align: center
+                font-size: 17px
+                cursor: pointer
+                
+    .frmVenta
+        float: left
+        position: sticky!important
+        margin-top: 10%
+        width: 45%
+        padding: 3%
+        border: 1px solid black
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    #vender
+        background-color: #63BE7B
+        color: white
+        font-size: 15px
+        width: 100%
+        margin-top: 2%
+    #stockVenta
+        .tableVenta
+            float: right
+            padding: 3%
+            margin-top: 1%
+            width: 50%
+    #buscarV
+        margin-top: 3%
+        width: 45%
+        margin-right: 5%
+        float: right
+    #carro
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        width: 40%
+        position: absolute
+        padding: 3%
+        background-color: white
+        color: black
+        height: auto
+        border: 2px solid black
+        top: 0
+        table
+            width: 100%
+            text-align: center
+        .total
+            float: right
+            margin-right: 4%
+            margin-top: 5%
+            font-size: 35px
+        .cerrarC
+            float: right
+            color: white
+            text-align: center
+            background-color: red
+            cursor: pointer
+            width: 40px
+            padding: 2%
+            border-radius: 3px
+        .btnVender
+            background-color: #63BE7B
+            color: white
+            font-size: 15px
+            width: 100%
+            cursor: pointer
+    .mostrarC
+        position: absolute
+        margin-left: 10% 
+        float: left
+        border: 2px solid #548C72
+        padding: 1%
+        border-radius: 10px
+        font-size: 25px
+    .mostrarC:hover
+        background-color: #548C72        
+        color: white
+        cursor: pointer
+    .mostrarV
+        margin: 0% 5% 3% 0% 
+        float: right
+        border: 2px solid #548C72
+        padding: 1%
+        border-radius: 10px
+        font-size: 25px
+        cursor: pointer
+    .mostrarV:hover
+        background-color: #548C72        
+        color: white
+    .volver
+        margin-left: 10%
+        float: left
+        font-size: 25px
+        border: solid 2px #548C72
+        border-radius: 10px
+        padding: 1%
+        cursor: pointer
+    .volver:hover
+        background-color: #548C72        
+        color: white
+    #ventas
+        padding-top: 5%
+        margin: 2% auto 0% 
+        width: auto
+        color: black
+        text-align: center
+        .totalventa
+            font-size: 30px
+            float: right
+            margin-top: 3%
+        .tableVenta
+            width: 100%
+            th
+                cursor: pointer!important
+            .hov:hover
+                color: #D9923B
+                cursor: pointer
+    .result
+        margin-bottom: 3%
+        display: grid
+        grid-template-rows: auto
+        grid-template-columns: 33% 33% 33%
+        .totalMes
+            grid-column: 2
+            grid-row: 1
+            font-size: 35px
+            margin: 3% auto 0%
+            border: 1px solid black
+            padding: 2%
+        .totalGanancia
+            grid-column: 3
+            grid-row: 1
+            font-size: 35px
+            margin: 3% auto 0%
+            border: 1px solid black
+            padding: 2%
+        .cantVendida
+            grid-row: 1
+            grid-column: 1
+            font-size: 35px
+            margin: 3% auto 0%
+            border: 1px solid black
+            padding: 2%
+    .btns
+        display: inline-grid
+        grid-template-columns: auto 40% auto
+        grid-template-rows: auto auto
+        width: 100%
+        grid-row-gap: 5%
+        grid-column-gap: 0.5%
+        margin-bottom: 2%
+        justify-content: center
+        #buss
+            grid-column: 1/span 2
+            grid-row: 1 
+        .selectV
+            grid-column: 2
+            grid-row: 2
+            
+        .selectA            
+            grid-column: 3
+            grid-row: 2
+        .selectD
+            grid-column: 1
+            grid-row: 2   
+        .buscarF
+            font-size: 20px
+            border: solid 2px #F2A477
+            border-radius: 3px
+            padding: 1%
+            cursor: pointer
+            grid-column: 3
+            grid-row: 1
+        .buscarF:hover
+            color: #F2A477
+
+#log
+    display: grid
+    grid-template-columns: auto
+    grid-auto-rows: repeat(4, auto)
+    justify-content: center
+    margin: 5% 30% 0%
+    text-align: center
+    font-size: 30px
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    .userl
+        grid-row: 1
+    .user
+        grid-row: 2
+    .passl
+        margin-top: 2%
+        grid-row: 3
+    .pass
+        grid-row: 4
+        margin-bottom: 5%
+    button
+        margin-bottom: 3%
+
+    
+          
+
+@media print
+    .submenu
+        display: none
+    .menu
+        display: none
+    #enviar
+        display: none
+    #modificar
+        display: none
+    #i
+        display: none
+    .bPro
+        display: none
+    .selectProvedor
+        display: none
+    #cerrarC
+        display: none
+    #provedor
+        .table
+            width: 110%
+    .factura
+        padding-right: 15%   
+        .datos
+            display: block
+
+@media only screen and (max-width: 425px)
+    .menu
+        grid-template-columns: auto auto
+        grid-template-rows: repeat(2, auto)
+        grid-row-gap: 10px
+        column-gap: 10px
+        font-size: 20px
+        justify-content: center
+
+    .submenu
+        grid-template-columns: 45% 45%
+        grid-template-rows: 1
+        column-gap: 2%
+        .nuevo
+            margin: 0
+        .verg
+            padding: 0
+            width: auto
+        .atras
+            width: auto
+
+    .factura
+        display: block
+        .logo
+            background-size: 90%
+        #enviar
+            padding: 0
+            margin: 3%                
+            font-size: 20px
+            color: white
+            width: 100%
+            height: 50px
+        #i
+            padding: 0
+            width: 100%
+            height: 50px
+
+        .aclaraciones
+            display: block
+            text-align: left
+            padding: 1%
+            width: 60%
+        
+        .firma
+            padding: 0
+            display: block
+
+        .importe
+            float: left
+            display: block
+
+    #venta
+        #stockVenta
+            .tableVenta
+                float: none
+        #buscarV
+            width: 100%
+            margin: 10% 0 3% 0
+        .frmVenta
+            width: 100%
+        .table td
+            .des
+                display: none
+        .table th
+            .des
+                display: none        
+        .mostrarV
+            margin: 5% 5% 0% 24%
+            display: inline-block
+            float: none
+        .mostrarC
+            position: relative
+            display: inline-block
+            margin-left: 28%
+        .mostrarCaja
+            display: inline-block
+            margin: 4% 0 0 40%
+        #Caja
+            width: 100%
+            margin-left: 0
+            top: 0
+            padding: 5%
+        .volver
+            margin-bottom: 10%
+        .result
+            display: inline-block
+        #carro
+            width: auto
+
+    #stock
+        .boxDolar
+            width: 100%
+
+    .totalProve
+        width: auto
+    
+    #log
+        margin: 10% 5% 0%

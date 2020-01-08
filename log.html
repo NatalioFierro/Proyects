@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
+    <head>
+        <title>M&M</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0" />
+        <link rel="shortcut icon" href="">        
+        <!--librerias-->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">        
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="jquery.js"></script>
+        <script src="angular/angular.js"></script>
+        <!--CSS-->
+        <link rel="stylesheet" href="inicio.css" type="text/css" media="all">
+        <script>
+            $(document).ready(function(){
+                $('#btnL').click(function(){
+                if($('#compro').html() == "s"){
+                    window.open("./inicio.html","_self");
+                }
+                });
+            });
+        </script>
+    </head>
+    <body>
+            <div ng-app="app" ng-controller="control" ng-init="mostrar()" class=" w3-animate-left">
+                    <center><h1 class="pt-5">Inicio de sesion</h1></center> 
+                    <div id="log">
+                        <div id="compro" class="esconder">{{kk}}</div>
+                        <label class="userl">Ingrese el Usuario:</label>
+                        <input class="user form-control" type="text" ng-model="user">
+                        <label class="passl">Ingrese su Contraceña:</label>
+                        <input class="pass form-control" type="text" ng-model="pass">
+                        <button id="btnL" class="btn btn-danger btn-xs" ng-click="log()">Aceptar</button>
+                        <div id="no" ng-class="esc">
+                        El usuario o la Contraceña son incorrectos intentelo nuevamente.
+                        </div>
+                    </div>
+            </div>
+
+            <script src="angular/servicio.js"></script>
+    </body>
+    
+</html>

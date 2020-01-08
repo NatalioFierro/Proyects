@@ -1,0 +1,1067 @@
+.menu {
+  width: 90%;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  margin: 1% 2% 5% 2%;
+  grid-column-gap: 2%;
+  font-size: 30px;
+}
+
+.menu div {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 3%;
+  text-align: center;
+  border: 2px solid #D9765F;
+  border-radius: 5px;
+}
+
+.menu div:hover {
+  border: 2px solid #D9765F;
+  background-color: #D9765F;
+  cursor: pointer;
+  color: white;
+}
+
+.busc, .bPro {
+  background-image: url("lupa.png");
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  background-position: 99%;
+}
+
+.active {
+  background-color: #D9765F;
+  color: white;
+}
+
+.nada {
+  background-color: red !important;
+}
+
+#cerrarC {
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  margin: 1%;
+  padding: 1px;
+  border: 2px solid #D9765F;
+}
+
+#cerrarC:hover {
+  border: 2px solid #D9765F;
+  background-color: #D9765F;
+  cursor: pointer;
+  color: white;
+}
+
+.factura {
+  width: 90%;
+  margin: 5%;
+  height: auto;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -ms-grid-rows: (8)[auto];
+      grid-template-rows: repeat(auto, 8);
+  grid-row-gap: 1%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 5% 5% 5% 5%;
+  font-size: 17px;
+  margin-bottom: 5%;
+}
+
+.factura .logo {
+  background-image: url("log.png");
+  background-size: 150%;
+  height: 80px;
+  background-position: center;
+  width: 100%;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.factura .numero {
+  float: right;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.factura .fechaE {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/span 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.factura .fechaE input {
+  width: 10%;
+  display: inline;
+}
+
+.factura .formularioE {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/span 2;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.factura .fechaR {
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.factura .fechaR input {
+  width: 10%;
+  display: inline;
+}
+
+.factura .importe {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  float: right;
+  display: inline;
+  -ms-grid-row: 5;
+  grid-row: 5;
+}
+
+.factura .importe input {
+  width: 80%;
+}
+
+.factura .firma {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  display: inline;
+  margin-left: 4%;
+}
+
+.factura .aclaraciones {
+  width: 80%;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: inline;
+  text-align: center;
+}
+
+.factura .formularioR {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/span 2;
+  -ms-grid-row: 6;
+  grid-row: 6;
+}
+
+.factura .datos {
+  display: none;
+  font-size: 15px;
+  -ms-grid-row: 7;
+  grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/span 3;
+}
+
+.factura .separar {
+  width: 5%;
+  -ms-grid-row: 8;
+  grid-row: 8;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#enviar {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  background-color: #A62121;
+  -ms-grid-row: 8;
+  grid-row: 8;
+  margin: 3%;
+  padding: 7%;
+  font-size: 20px;
+  color: white;
+}
+
+#enviar:hover {
+  color: black;
+}
+
+#i {
+  background-color: #4E8BBF;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 8;
+  grid-row: 8;
+  margin: 3%;
+  padding: 7%;
+  font-size: 20px;
+  color: white;
+}
+
+#i:hover {
+  color: black;
+}
+
+#modificar {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 7;
+  grid-row: 7;
+  margin: 3%;
+}
+
+.mostrar {
+  display: inline-block !important;
+}
+
+.esconder {
+  display: none !important;
+}
+
+.submenu {
+  width: 100%;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 50% 30%;
+      grid-template-columns: 50% 30%;
+  -ms-grid-rows: 1;
+      grid-template-rows: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.submenu .nuevo {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  border: 2px solid #548C72;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 25px;
+  text-align: center;
+  margin-right: 60%;
+}
+
+.submenu .nuevo:hover {
+  color: white;
+  cursor: pointer;
+  background-color: #548C72;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+.submenu .verg {
+  text-align: center;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  border: 2px solid #548C72;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 25px;
+  width: 70%;
+}
+
+.submenu .verg:hover {
+  color: white;
+  cursor: pointer;
+  background-color: #548C72;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+.submenu .atras {
+  text-align: center;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  border: 2px solid #548C72;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 25px;
+  width: 20%;
+}
+
+.submenu .atras:hover {
+  color: white;
+  cursor: pointer;
+  background-color: #548C72;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+#verg {
+  margin: 2%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#stock {
+  width: 90%;
+  margin: 2% auto 0% auto;
+}
+
+#stock .boxDolar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 5% auto auto;
+      grid-template-columns: auto 5% auto auto;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  width: 60%;
+  grid-column-gap: 5%;
+  margin-bottom: 2%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1%;
+  border-radius: 5px;
+}
+
+#stock .boxDolar label {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  font-size: 25px;
+}
+
+#stock .boxDolar .dolar {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#stock .boxDolar .predolar {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#stock .boxDolar .cambiarD {
+  -ms-grid-column: 4 !important;
+  grid-column: 4 !important;
+  text-align: center !important;
+  font-size: 20px !important;
+}
+
+#stock .boxDolar .cambiarD:hover {
+  cursor: pointer;
+}
+
+#stock #buscar {
+  height: 60px;
+  width: 35%;
+  float: right;
+  margin-bottom: 2%;
+}
+
+#stock .table {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#stock .table .hov:hover {
+  color: #D9923B;
+  cursor: pointer;
+}
+
+#stock .cont {
+  width: 80%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  bottom: 0;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #182D40;
+  opacity: .9;
+}
+
+#stock .cont .cargar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
+  color: white;
+  padding: 1%;
+}
+
+#stock .cont .cargar label {
+  font-size: 25px;
+  margin-top: 5px;
+  text-align: center;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/span 1;
+}
+
+#stock .cont .cargar input {
+  margin-top: 5px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/ span 2;
+}
+
+#stock .out {
+  background-color: #BF1304;
+  color: #F2EADF;
+  font-size: 20px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  margin-bottom: 4%;
+}
+
+#stock .out:hover {
+  color: black;
+  border-color: 3px solid #FECE6D;
+}
+
+#stock .nv {
+  margin-bottom: 4%;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  color: #F2EADF;
+  font-size: 20px;
+  background-color: #1A7552;
+}
+
+#stock .nv:hover {
+  color: black;
+}
+
+#stock #cargar {
+  font-size: 20px;
+  margin-top: 2% !important;
+  width: 100% !important;
+  -ms-grid-row: 13;
+  grid-row: 13;
+  background-color: #3F8C85;
+  color: #F2EADF;
+}
+
+#stock #cargar:hover {
+  color: black;
+}
+
+#stock .in {
+  margin: 0 auto 2%;
+  width: 60%;
+  border: 2px solid #548C72;
+  padding: 1%;
+  border-radius: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#stock .in:hover {
+  background-color: #548C72;
+  color: white;
+  cursor: pointer;
+}
+
+#provedor {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 45% 45%;
+      grid-template-columns: 45% 45%;
+  -ms-grid-rows: auto auto  auto;
+      grid-template-rows: auto auto  auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-row-gap: 5%;
+  grid-column-gap: 5%;
+}
+
+#provedor .table {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/span 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  width: 100%;
+}
+
+#provedor .table select {
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+#provedor .table input {
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.totalProve {
+  border: 2px solid black;
+  font-size: 30px;
+  width: 40%;
+  padding: 1%;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#venta .mostrarCaja {
+  position: relative;
+  display: inline;
+  border: 2px solid #548C72;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+#venta .mostrarCaja:hover {
+  background-color: #548C72;
+  color: white;
+  cursor: pointer;
+}
+
+#venta #Caja {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 40%;
+  margin-left: 30%;
+  position: absolute;
+  padding: 3%;
+  background-color: white;
+  color: black;
+  height: auto;
+  border: 2px solid black;
+}
+
+#venta #Caja .CerrarCaja {
+  float: right;
+  color: white;
+  text-align: center;
+  background-color: red;
+  cursor: pointer;
+  width: 45px;
+  border-radius: 3px;
+  font-size: 17px;
+  margin-bottom: 10%;
+}
+
+#venta #Caja .table {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  margin: 5%;
+  grid-column-gap: 2%;
+  grid-row-gap: 2%;
+}
+
+#venta #Caja .table label {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+#venta #Caja .table input {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#venta #Caja .table .abrir {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  border: 2px solid #548C72;
+  padding: 4%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#venta .frmVenta {
+  float: left;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  margin-top: 10%;
+  width: 45%;
+  padding: 3%;
+  border: 1px solid black;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#venta #vender {
+  background-color: #63BE7B;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  margin-top: 2%;
+}
+
+#venta #stockVenta .tableVenta {
+  float: right;
+  padding: 3%;
+  margin-top: 1%;
+  width: 50%;
+}
+
+#venta #buscarV {
+  margin-top: 3%;
+  width: 45%;
+  margin-right: 5%;
+  float: right;
+}
+
+#venta #carro {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 40%;
+  position: absolute;
+  padding: 3%;
+  background-color: white;
+  color: black;
+  height: auto;
+  border: 2px solid black;
+  top: 0;
+}
+
+#venta #carro table {
+  width: 100%;
+  text-align: center;
+}
+
+#venta #carro .total {
+  float: right;
+  margin-right: 4%;
+  margin-top: 5%;
+  font-size: 35px;
+}
+
+#venta #carro .cerrarC {
+  float: right;
+  color: white;
+  text-align: center;
+  background-color: red;
+  cursor: pointer;
+  width: 40px;
+  padding: 2%;
+  border-radius: 3px;
+}
+
+#venta #carro .btnVender {
+  background-color: #63BE7B;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  cursor: pointer;
+}
+
+#venta .mostrarC {
+  position: absolute;
+  margin-left: 10%;
+  float: left;
+  border: 2px solid #548C72;
+  padding: 1%;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+#venta .mostrarC:hover {
+  background-color: #548C72;
+  color: white;
+  cursor: pointer;
+}
+
+#venta .mostrarV {
+  margin: 0% 5% 3% 0%;
+  float: right;
+  border: 2px solid #548C72;
+  padding: 1%;
+  border-radius: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#venta .mostrarV:hover {
+  background-color: #548C72;
+  color: white;
+}
+
+#venta .volver {
+  margin-left: 10%;
+  float: left;
+  font-size: 25px;
+  border: solid 2px #548C72;
+  border-radius: 10px;
+  padding: 1%;
+  cursor: pointer;
+}
+
+#venta .volver:hover {
+  background-color: #548C72;
+  color: white;
+}
+
+#venta #ventas {
+  padding-top: 5%;
+  margin: 2% auto 0%;
+  width: auto;
+  color: black;
+  text-align: center;
+}
+
+#venta #ventas .totalventa {
+  font-size: 30px;
+  float: right;
+  margin-top: 3%;
+}
+
+#venta #ventas .tableVenta {
+  width: 100%;
+}
+
+#venta #ventas .tableVenta th {
+  cursor: pointer !important;
+}
+
+#venta #ventas .tableVenta .hov:hover {
+  color: #D9923B;
+  cursor: pointer;
+}
+
+#venta .result {
+  margin-bottom: 3%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
+}
+
+#venta .result .totalMes {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  font-size: 35px;
+  margin: 3% auto 0%;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+#venta .result .totalGanancia {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  font-size: 35px;
+  margin: 3% auto 0%;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+#venta .result .cantVendida {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  font-size: 35px;
+  margin: 3% auto 0%;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+#venta .btns {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: auto 40% auto;
+      grid-template-columns: auto 40% auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  width: 100%;
+  grid-row-gap: 5%;
+  grid-column-gap: 0.5%;
+  margin-bottom: 2%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#venta .btns #buss {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/span 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+#venta .btns .selectV {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+#venta .btns .selectA {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+#venta .btns .selectD {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+#venta .btns .buscarF {
+  font-size: 20px;
+  border: solid 2px #F2A477;
+  border-radius: 3px;
+  padding: 1%;
+  cursor: pointer;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+#venta .btns .buscarF:hover {
+  color: #F2A477;
+}
+
+#log {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-auto-rows: repeat(4, auto);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 5% 30% 0%;
+  text-align: center;
+  font-size: 30px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#log .userl {
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+#log .user {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+#log .passl {
+  margin-top: 2%;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+#log .pass {
+  -ms-grid-row: 4;
+  grid-row: 4;
+  margin-bottom: 5%;
+}
+
+#log button {
+  margin-bottom: 3%;
+}
+
+@media print {
+  .submenu {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  #enviar {
+    display: none;
+  }
+  #modificar {
+    display: none;
+  }
+  #i {
+    display: none;
+  }
+  .bPro {
+    display: none;
+  }
+  .selectProvedor {
+    display: none;
+  }
+  #cerrarC {
+    display: none;
+  }
+  #provedor .table {
+    width: 110%;
+  }
+  .factura {
+    padding-right: 15%;
+  }
+  .factura .datos {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .menu {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: (auto)[2];
+        grid-template-rows: repeat(2, auto);
+    grid-row-gap: 10px;
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    font-size: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .submenu {
+    -ms-grid-columns: 45% 45%;
+        grid-template-columns: 45% 45%;
+    -ms-grid-rows: 1;
+        grid-template-rows: 1;
+    -webkit-column-gap: 2%;
+            column-gap: 2%;
+  }
+  .submenu .nuevo {
+    margin: 0;
+  }
+  .submenu .verg {
+    padding: 0;
+    width: auto;
+  }
+  .submenu .atras {
+    width: auto;
+  }
+  .factura {
+    display: block;
+  }
+  .factura .logo {
+    background-size: 90%;
+  }
+  .factura #enviar {
+    padding: 0;
+    margin: 3%;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+    height: 50px;
+  }
+  .factura #i {
+    padding: 0;
+    width: 100%;
+    height: 50px;
+  }
+  .factura .aclaraciones {
+    display: block;
+    text-align: left;
+    padding: 1%;
+    width: 60%;
+  }
+  .factura .firma {
+    padding: 0;
+    display: block;
+  }
+  .factura .importe {
+    float: left;
+    display: block;
+  }
+  #venta #stockVenta .tableVenta {
+    float: none;
+  }
+  #venta #buscarV {
+    width: 100%;
+    margin: 10% 0 3% 0;
+  }
+  #venta .frmVenta {
+    width: 100%;
+  }
+  #venta .table td .des {
+    display: none;
+  }
+  #venta .table th .des {
+    display: none;
+  }
+  #venta .mostrarV {
+    margin: 5% 5% 0% 24%;
+    display: inline-block;
+    float: none;
+  }
+  #venta .mostrarC {
+    position: relative;
+    display: inline-block;
+    margin-left: 28%;
+  }
+  #venta .mostrarCaja {
+    display: inline-block;
+    margin: 4% 0 0 40%;
+  }
+  #venta #Caja {
+    width: 100%;
+    margin-left: 0;
+    top: 0;
+    padding: 5%;
+  }
+  #venta .volver {
+    margin-bottom: 10%;
+  }
+  #venta .result {
+    display: inline-block;
+  }
+  #venta #carro {
+    width: auto;
+  }
+  #stock .boxDolar {
+    width: 100%;
+  }
+  .totalProve {
+    width: auto;
+  }
+  #log {
+    margin: 10% 5% 0%;
+  }
+}
+/*# sourceMappingURL=inicio.css.map */

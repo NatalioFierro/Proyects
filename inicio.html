@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
+    <head>
+        <title>M&M</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0" />
+        <link rel="shortcut icon" href="">        
+        <!--librerias-->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">        
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="jquery.js"></script>
+        <script src="angular/angular.js"></script>
+        <!--CSS-->
+        <link rel="stylesheet" href="inicio.css" type="text/css" media="all">
+        
+        <script>
+            
+            
+            function menu(){
+                $('.servicio').click(function(){
+                    $('#imp').removeClass('esconder');
+                    $('#verg').addClass('esconder');
+                    $('.submenu').removeClass('esconder');
+                    $('#stock').addClass('esconder');
+                    $('.nuevo').removeClass('esconder');
+                    $('#venta').addClass('esconder');
+                    $('.atras').addClass('esconder');
+                    $('#provedor').addClass('esconder');
+                    $('.ventas').removeClass('active');
+                    $('.provedor').removeClass('active');
+                    $('.stock').removeClass('active');
+                    $('.servicio').addClass('active');
+                    $('.verg').removeClass('esconder');
+                });
+                $('.stock').click(function(){
+                    $('#imp').addClass('esconder');
+                    $('#verg').addClass('esconder');
+                    $('.submenu').addClass('esconder');
+                    $('#stock').removeClass('esconder');
+                    $('#venta').addClass('esconder');
+                    $('#provedor').addClass('esconder');
+                    $('.servicio').removeClass('active');
+                    $('.ventas').removeClass('active');
+                    $('.provedor').removeClass('active');
+                    $('.stock').addClass('active');
+                });
+                $('.ventas').click(function(){
+                    $('#imp').addClass('esconder');
+                    $('#venta').removeClass('esconder');
+                    $('#verg').addClass('esconder');
+                    $('#stock').addClass('esconder');
+                    $('.submenu').addClass('esconder');
+                    $('#provedor').addClass('esconder');
+                    $('.servicio').removeClass('active');
+                    $('.stock').removeClass('active');
+                    $('.provedor').removeClass('active');
+                    $('.ventas').addClass('active');
+                });
+                $('.provedor').click(function(){
+                    $('#imp').addClass('esconder');
+                    $('#venta').addClass('esconder');
+                    $('#verg').addClass('esconder');
+                    $('#stock').addClass('esconder');
+                    $('.submenu').addClass('esconder');
+                    $('#provedor').removeClass('esconder');
+                    $('.ventas').removeClass('active');
+                    $('.servicio').removeClass('active');
+                    $('.stock').removeClass('active');
+                    $('.provedor').addClass('active');
+                });
+                
+            }
+
+            function menuServi(){                
+                $('.nuevo').click(function(){
+                    $('#imp').removeClass('esconder');
+                    $('#verg').addClass('esconder');
+                    $('#stock').addClass('esconder');
+                });
+
+                $('.verg').click(function(){
+                    $('.nuevo').addClass('esconder');
+                    $('#imp').addClass('esconder');
+                    $('#verg').removeClass('esconder');
+                    $('#stock').addClass('esconder');
+                    $('.atras').removeClass('esconder');
+                    $('.verg').addClass('esconder');
+                });
+                $('.atras').click(function(){
+                    $('.verg').removeClass('esconder');
+                    $('#imp').removeClass('esconder');
+                    $('#verg').addClass('esconder');
+                    $('#stock').addClass('esconder');
+                    $('.atras').addClass('esconder');
+                    $('.nuevo').removeClass('esconder');
+                });
+            }
+
+            function Panel(){
+                $('.cargar').addClass('esconder');
+                $('.out').click(function(){
+                    $('.cargar').toggleClass('esconder');
+                    $('.in').toggleClass('esconder');
+                });
+                $('.in').click(function(){
+                    $('.cargar').toggleClass('esconder');
+                    $('.in').addClass('esconder');
+                });
+            }
+
+            function Carrito(){
+                $('.mostrarC').click(function(){
+                    $('#carro').toggleClass('esconder');
+                    $('.mostrarC').addClass('esconder');
+                    
+                });
+                $('.cerrarC').click(function(){
+                    $('#carro').toggleClass('esconder');
+                    $('.mostrarC').removeClass('esconder');
+                });
+            }
+
+            function Ventas(){
+                $('.mostrarV').click(function(){
+                    $('#ventas').removeClass('esconder');
+                    $('.frmVenta').addClass('esconder');
+                    $('#stockVenta').addClass('esconder');
+                    $('.mostrarC').addClass('esconder');
+                    $('#carro').addClass('esconder');
+                    $('.volver').removeClass('esconder');
+                    $('.mostrarV').addClass('esconder');
+                    $('.mostrarCaja').addClass('esconder');
+                    $('#Caja').addClass('esconder');
+                });
+                
+                $('.volver').click(function(){
+                    $('#ventas').addClass('esconder');
+                    $('#venta').removeClass('esconder');
+                    $('.frmVenta').removeClass('esconder');
+                    $('#stockVenta').removeClass('esconder');
+                    $('.mostrarC').removeClass('esconder');
+                    $('.volver').addClass('esconder');
+                    $('.mostrarV').removeClass('esconder');
+                    $('.mostrarCaja').removeClass('esconder');
+                });
+               
+            }
+
+            function Caja(){
+                $('.mostrarCaja').click(function(){
+                    $('#Caja').removeClass('esconder');
+                    $('.mostrarCaja').addClass('esconder');
+                });
+                $('.CerrarCaja').click(function(){
+                    $('#Caja').addClass('esconder');
+                    $('.mostrarCaja').removeClass('esconder');
+                });
+            }
+
+            function close(){
+                $('#cerrarC').click(function(){
+                        $.post("db/close.php");
+                        window.open("./log.html","_self");
+                }); 
+            }
+            $(document).ready(function(){
+                $('#cerrarC').addClass('esconder');
+                $('.menu').addClass('esconder');
+                $('.submenu').addClass('esconder');
+                $('#imp').addClass('esconder');
+                $('#Caja').addClass('esconder');
+                $('#provedor').addClass('esconder');
+                $('.volver').addClass('esconder');
+                $('#carro').addClass('esconder');
+                $('#venta').addClass('esconder');                
+                $('#stock').addClass('esconder');
+                $('#verg').addClass('esconder');
+                $('#ventas').addClass('esconder');
+                $('.atras').addClass('esconder');
+                $.get("db/estado.php", function(data){                       
+                        if(data == "1"){                        
+                        $('.menu').removeClass('esconder');
+                        $('.submenu').removeClass('esconder');
+                        $('#imp').removeClass('esconder');
+                        $('#cerrarC').removeClass('esconder');
+                        menuServi();
+                        menu();
+                        Panel();
+                        Carrito();
+                        Ventas();
+                        Caja();
+                        close();
+                        }else{
+                           window.open("./log.html","_self");
+                        }
+                    });
+                    
+            $('#btnTodo').click(function(){
+                $(document).scrollTop(0); 
+            })            
+            });
+        </script>
+    </head>
+    <body>
+        <div id="cerrarC">Cerrar sesion</div>
+        <div class="menu">
+               <div class="servicio">Servicio Técnico</div>
+                <div class="ventas">Ventas</div>
+                <div class="stock">Stock/Almacen</div>
+                <div class="provedor">Lista a Proveedores</div> 
+        </div>
+                            <!--**********SERVICIO TECNICO**********-->
+        <div ng-controller="control" ng-init="mostrar()" class=" w3-animate-left">
+              
+                <div class="submenu">
+                        <div class="nuevo" ng-click="nuevo()">Generar nuevo recibo</div>
+                        <div class="atras">Volver</div>
+                        <div class="verg" ng-click="MuestraNuevo(50)">Ver recibos guardados</div>
+                </div>                
+                <div id="imp" class="factura">               
+                <div class="logo">
+                    
+                </div>
+                <div class="numero" ng-model="idfactura">
+                    <label>Número:</label>
+                        {{idfactura}}
+                </div>
+                <div class="fechaE" ng-model="fechae">               
+                        <label>Fecha de Entrada:</label>
+                        {{fechae | date:'dd-MM-y'}}                
+                </div>
+                
+                        <div class="formularioE w3-animate-zoom">               
+                            <label>Cliente:</label>
+                            <input type="text" ng-model="cliente" class="form-control"> 
+                            <label>DNI:</label>
+                            <input type="text" ng-model="dni" class="form-control">           
+                            <label>Domicilio:</label>
+                            <input ng-model="domicilio" class="form-control">
+                            <label>Teléfono:</label>
+                            <input ng-model="telefono" class="form-control">                                
+                            <label>Dispositivo a Reparar:</label>
+                            <input  ng-model="dispositivo" class="form-control">
+                            <label>Servicio a Realizar:</label>
+                            <textarea ng-model="servicio" class="form-control" rows="2"></textarea>                            
+                        </div>
+                
+                
+                        <div class="fechaR" ng-model="fechar">
+                                <label>Fecha de Retiro:</label>
+                                {{fechar | date:'dd-MM-y'}} 
+                        </div>
+                        <div class="importe">
+                            <label>Importe del Servicio:</label>
+                            <span>$</span><input class="form-control" ng-model="importe" placeholder="$">
+                        </div>
+                        <div class="aclaraciones">
+                                Los trabajos deben ser retirados en un plazo de 60 días después de la fecha de entrega.
+                                "La empresa No se Responsabiliza" por daños y/o robos del dispositivo después del plazo.
+                        </div> 
+
+                        <div class="firma">
+                            Firma del Cliente:
+                        </div>
+                
+            
+                               
+                    <div class="formularioR w3-animate-zoom">                   
+                        <label>Repuestos:</label>
+                        <textarea name="repuestos" ng-model="repuestos" class="form-control" rows="2"></textarea>  
+                    </div>
+                    <div class="datos">
+                        Direccion: Av.Pte. Perón 867 - Cel:(2657) 617327 // 557493 - <p>E-mail: mymreparaciones@hotmail.com.ar</p>
+                    </div>
+                    <input id="enviar" type="submit" name="Enviar" class="btn m" ng-click="insertFactura()" value="{{btnImprimir}}">
+                    <div class="separar"></div>
+                    <input id="i" type="submit" name="imp" class="btn m" ng-click="imprimir()" value="Fecha de Retiro">
+                </div>
+                
+                <div id="verg">
+                    <input id="buscar" class="busc form-control w3-animate-right" type="text" ng-model="buscl" placeholder="Buscar"
+                    aria-label="Buscar"> 
+                    <table class="table">
+                        <tr>
+                            <th>N°</th>
+                            <th class="hov" ng-click="sortBy('cliente')" >Cliente</th>
+                            <th>Dni</th>
+                            <th>Telefono</th>
+                            <th>Dispositivo</th>
+                            <th>Servicio</th>
+                            <th class="hov" ng-click="sortBy('fechae')">Fecha de Entrega</th>
+                            <th>Fecha de Retiro</th>
+                            <th>Importe</th>
+                            <th>Repuestos</th>                    
+                        </tr>
+                        <tr ng-repeat="x in peque | orderBy:propertyName:reverse | filter:buscl">                    
+                            <td>{{x.id}}</td>
+                            <td>{{x.cliente}}</td>
+                            <td>{{x.dni}}</td>
+                            <td>{{x.telefono}}</td>
+                            <td>{{x.dispositivo}}</td>
+                            <td>{{x.servicio}}</td>
+                            <td>{{x.fechae | date:'dd-MM-y'}}</td>
+                            <td>{{x.fechar | date:'dd-MM-y'}}</td>
+                            <td>${{x.importe}}</td>
+                            <td>{{x.repuestos}}</td>
+                            <td>
+                                <button class="btn btn-success btn-xs" ng-click="updateFactura(x.id, x.cliente, x.dni, x.domicilio, x.telefono, x.dispositivo, x.servicio, x.fechae , x.fechar, x.importe, x.repuestos)">
+                                    <span class="glyphicon glyphicon-edit"></span> Editar
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger btn-xs" ng-click="deleteFactura(x.id)">
+                                    <span class="glyphicon glyphicon-trash"></span> Borrar
+                                </button>
+                            </td>
+                        </tr>                        
+                    </table>
+                    <button id="btnTodo" class="btn btn-warning" ng-click="Todo()">
+                        Mostrar Todo
+                    </button>
+                </div>
+                    <!--**********CONTROL DE STOCK**********-->
+            <div id="stock" class="stockk" ng-init="mostrarProdu()">
+                <div class="boxDolar">
+                        <label>Valor del dolar:</label> 
+                        <input type="checkbox" class="form-control dolar" ng-model="dolar">
+                        <input type="text" class="form-control predolar" ng-model="predolar">
+                        <button class="cambiarD btn btn-outline-warning" ng-click="cambiarDolar()">Cambiar Dolar</button>
+                </div>
+                    
+                    <input id="buscar" class="busc form-control w3-animate-right" type="text" ng-model="bus" placeholder="Buscar"
+                    aria-label="Buscar">        
+                    <div class="btn in w3-animate-top">Mostrar Panel</div>
+                    <table class="table w3-animate-left">
+                            <tr>
+                                <th>N°</th>
+                                <th class="hov" ng-click="sortBy('nombre')">Nombre</th>
+                                <th>Codigo</th>
+                                <th>Categoria</th>
+                                <th>Descripcion</th>
+                                <th>Tamaño</th>
+                                <th>Costo en Dolar</th>
+                                <th>Precio de Costo</th>
+                                <th>Precio de Venta</th>
+                                <th class="hov" ng-click="sortBy('proveedor')">Proveedor</th>
+                                <th class="hov" ng-click="sortBy('cantidad')">Cantidad</th>                    
+                            </tr>
+                            <tr ng-repeat="a in producto | orderBy:propertyName:reverse | filter: bus">                                                  
+                                <td>{{a.id}}</td>
+                                <td>{{a.nombre}}</td> 
+                                <td>{{a.codigo}}</td>
+                                <td>{{a.categoria}}</td>
+                                <td>{{a.descripcion}}</td>
+                                <td>{{a.tamano}}</td>
+                                <td>US${{a.costoDolar}}</td>
+                                <td>${{a.precosto}}</td>
+                                <td>${{a.preventa}}</td>
+                                <td>{{a.proveedor}}</td>
+                                <td>{{a.cantidad}}</td>
+                                <td>
+                                    <button class="btn btn-success btn-xs" ng-click="updateProducto(a.id, a.nombre, a.codigo, a.categoria, a.descripcion, a.tamano, a.costoDolar, a.precosto, a.preventa, a.proveedor, a.cantidad)">
+                                        <span class="glyphicon glyphicon-edit"></span> Editar
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary btn-xs" ng-click="insertProvedor(a.id, a.nombre, a.codigo, a.proveedor, a.precosto)">
+                                        <span></span> Listar
+                                    </button>
+                                </td> 
+                                <td>
+                                    <button class="btn btn-danger btn-xs" ng-click="deleteProducto(a.id)">
+                                        <span class="glyphicon glyphicon-trash"></span> Borrar
+                                    </button>
+                                </td>                                
+                            </tr>                        
+                        </table>
+                        <div class="cont">
+                            <div class="cargar w3-animate-zoom ">
+                                <div class="btn out">Minimizar</div>
+                                <div class="btn nv" ng-click="nuevoProducto()">Nuevo</div>
+                                <div class="esconder" ng-model="idproducto"></div>                                           
+                                <label>Nombre:</label>
+                                <input type="text" ng-model="nombre" class="form-control">            
+                                <label>Codigo:</label>
+                                <input ng-model="codigo" class="form-control">
+                                <label>Categoria:</label>
+                                <input ng-model="categoria" class="form-control">                                
+                                <label>Descripcion:</label>
+                                <input  ng-model="descripcion" class="form-control">
+                                <label>Tamaño:</label>
+                                <input ng-model="tamano" class="form-control">  
+                                <label>Costo en Dolar:</label>
+                                <input ng-model="costoDolar" class="form-control" ng-change="Dolar({{predolar}})">
+                                <label>Precio de Costo:</label>
+                                <input ng-model="precosto" class="form-control">
+                                <label>Precio de Venta:</label>
+                                <input ng-model="preventa" class="form-control">
+                                <label>Proveedor:</label>
+                                <input ng-model="proveedor" class="form-control">
+                                <label>Cantidad:</label>
+                                <input ng-model="cantidad" class="form-control">
+                                <input id="cargar" type="submit" name="Enviar" class="btn" ng-click="insertProducto()" value="{{btnCargar}}">
+                                
+                            </div>
+                        </div>
+            </div>
+            <!--**********Fin CONTROL DE STOCK**********-->
+            <!--**********LISTA PROVEEDOR**********-->
+            <div id="provedor" ng-init="mostarProvedor()">
+                <select ng-change="totalProvedor()"  class="form-control selectD" ng-options="pro for pro in pro" ng-model="Prov">  
+                    <option value="">Elija el Provedor</option>             
+                </select>
+                <input id="bPro" class=" bPro form-control w3-animate-right" type="text" ng-model="bPro" placeholder="Buscar" aria-label="Buscar">
+                <table class="table w3-animate-left" ng-init="totalProvedor()">
+                    <tr>
+                        <th class="hov" ng-click="sortBy('nombre')">Nombre</th>
+                        <th>Codigo</th>
+                        <th class="hov" ng-click="sortBy('proveedor')">Proveedor</th>
+                        <th>Cantidad</th>
+                        <th>Sub Total</th>                    
+                    </tr>
+                    <tr ng-repeat="a in listaProvedor | filter: Prov | filter:bPro">
+                        <td>{{a.nombre}}</td> 
+                        <td>{{a.codigo}}</td>
+                        <td>{{a.proveedor}}</td>
+                        <td>{{a.cantidad}}</td>
+                        <td>${{a.precosto}}</td>   
+                        <td>
+                            <button class="btn btn-danger btn-xs" ng-click="deleteProvedor(a.id)">
+                                <span class="glyphicon glyphicon-trash"></span> Borrar
+                            </button>
+                        </td>
+                    </tr>                        
+                </table>
+                <div class="totalProve">Total: ${{totalProve}}</div>
+            </div>
+            <!--**********Fin lista Poveedor**********-->
+            <!--**********VENTAS**********-->
+            <div id="venta">
+                <div class="mostrarC">Mostrar Carrito</div>
+                <div class="mostrarV">Registro de Ventas</div>
+                <div class="volver">Volver</div> 
+                <div class="mostrarCaja">Caja</div>               
+                <div class="frmVenta w3-animate-zoom">
+                    <div class="esconder" ng-model="idVenta"></div>                                         
+                    <label>Codigo:</label>
+                    <input type="text" ng-model="codigoV" class="form-control" disabled="disabled">            
+                    <label>Nombre:</label>
+                    <input ng-model="nombreV" class="form-control" disabled="disabled">
+                    <label>Cantidad:</label>
+                    <input ng-change="totalVenta()" ng-model="cantidadV" class="form-control">                                
+                    <label>Precio:</label>
+                    <input ng-change="totalVenta()" ng-model="precioV" class="form-control" disabled="disabled">
+                    <label>Sub Total</label>
+                    <input type="text" ng-model="subtotalV" class="form-control" value="{{subtotalV}}" disabled="disabled">
+                    <input id="vender" type="submit" name="Enviar" class="btn" ng-click="Vender()" value="{{btnCarrito}}">                    
+                </div>
+                <div id="ventas" ng-init="mostrarVentas()">
+                    
+                    <div class="btns">
+                        <input id="buss" class="busc form-control w3-animate-right" type="text" ng-model="buss" placeholder="Buscar"
+                        aria-label="Buscar">
+                        <div class="buscarF" ng-click="buscarFecha()">Buscar</div>
+                        <select ng-change="buscarFecha()"  class="form-control selectD" ng-options="Dia for Dia in Dia" ng-model="elegidoD">  
+                                <option value="">Elija el Dia</option>             
+                        </select>
+                        <select ng-change="buscarFecha()" class="form-control selectV" ng-options="Mes for Mes in Mes" ng-model="elegido">  
+                            <option value="">Elija un Mes</option>             
+                        </select>
+                        <select ng-change="buscarFecha()" class="form-control selectA" ng-options="Ano for Ano in Ano" ng-model="elegidoA">  
+                            <option value="">Elija el Año</option>             
+                        </select>                        
+                    </div>
+                        <table class="tableVenta table w3-animate-right">
+                                <tr>                                    
+                                    <th>Nombre</th>
+                                    <th>Codigo</th>                                    
+                                    <th>Fecha</th>                                   
+                                    <th>Cantidad</th>
+                                    <th>Sub Total</th>                    
+                                </tr>
+                                <tr ng-repeat="a in Ventas | orderBy:propertyName:reverse">   
+                                    <td>{{a.nombre}}</td> 
+                                    <td>{{a.codigo}}</td>                                    
+                                    <td>{{a.fecha | date:'dd-MM-y'}}</td>  
+                                    <td>{{a.cantidad}}</td>                                   
+                                    <td>${{a.total}}</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-xs" ng-click="borrarVenta(a.id, a.codigo, a.cantidad)">
+                                            <span class="glyphicon glyphicon-trash"></span> Borrar
+                                        </button>
+                                    </td>
+                                </tr>                      
+                            </table>
+                            <div class="result">
+                                <div class="totalGanancia">Ganancia: ${{ganancia | number:2}}</div>
+                                <div class="totalMes">Total Vendido: ${{totalMes | number:2}}</div>
+                                <div class="cantVendida">Cantidad Vendida: {{cantVendida}}</div>
+                            </div>
+                </div>
+                <div id="stockVenta">
+                        <input id="buscarV" class="busc form-control w3-animate-right" type="text" ng-model="busV" placeholder="Buscar"
+                        aria-label="Buscar">
+                        <table class="tableVenta table w3-animate-right">
+                                <tr>                                    
+                                    <th>Nombre</th>
+                                    <th>Codigo</th>                                     
+                                    <th>Precio de Venta</th>                                   
+                                    <th>Cantidad</th>                    
+                                </tr>
+                                <tr ng-repeat="a in producto | filter: busV">   
+                                    <td>{{a.nombre}}</td> 
+                                    <td>{{a.codigo}}</td>                                     
+                                    <td>${{a.preventa}}</td>                                   
+                                    <td>{{a.cantidad}}</td>        
+                                    <td>
+                                        <button class="btn btn-success btn-xs" ng-click="Carrito(a.codigo, a.nombre, a.preventa, a.precosto)">
+                                            <span class="glyphicon glyphicon-edit"></span> +
+                                        </button>
+                                    </td>
+                                </tr>                        
+                            </table>
+                </div>
+
+                <div id="carro" ng-init="mostrarCarro()">
+                        <div class="cerrarC">X</div>
+                        <table class="tableCarro table w3-animate-left">
+                                <tr>                                  
+                                    <th>Nombre</th>
+                                    <th>Codigo</th>                                     
+                                    <th>sub total</th>                                   
+                                    <th>Cantidad</th>                    
+                                </tr>
+                                <tr ng-repeat="c in Carro">   
+                                    <td>{{c.nombre}}</td> 
+                                    <td>{{c.codigo}}</td>                                      
+                                    <td>${{c.subtotal}}</td>                                   
+                                    <td>{{c.cantidad}}</td>        
+                                    <td>
+                                        <div class="btn btn-danger btn-xs" ng-click="deleteCarrito(c.codigo)">
+                                            <span class="glyphicon glyphicon-trash"></span> Borrar
+                                        </div>
+                                    </td>
+                                </tr>                        
+                        </table>
+                        <div class="total" ng-repeat="t in totalV">Total: ${{t.subtotal| number:2}}</div>
+
+                        <button class="btnVender btn" ng-click="GenerarVenta()">
+                            <span class="glyphicon glyphicon-edit">{{btnVender}}</span> 
+                        </button>
+                </div>
+
+                <div id="Caja" ng-init="mostrarCaja()">
+                    <div class="CerrarCaja">X</div>
+                    <div class="fechaCaja">Caja del dia: {{fechae | date:'dd-MM-y'}}</div>
+                        <div class="table">
+                        <input class="esconder" type="text" ng-model="idCaja">
+                           <label>Abrir Caja:</label>
+                           <input ng-change="igualar()" ng-model="abrir" class="form-control" value="{{abrir}}">
+                           <div type="text" class="abrir form-control" ng-click="Caja()" value>Abrir</div>
+                            
+                            <label>Cerrar Caja:</label>
+                            <input ng-model="cerrar" class="form-control" value="{{cerrar}}" disabled="disabled"> 
+                            
+                        </div>
+                </div>
+            </div>
+            <!--**********Fin VENNTAS**********-->
+
+        </div>
+                        
+
+       
+    <script src="angular/servicio.js"></script>
+    
+    </body>
+</html>
